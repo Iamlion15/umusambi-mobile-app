@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet,Image } from "react-native";
 import { Block, Text, theme } from "galio-framework";
 
 import myTheme from "../../constants/Theme"
@@ -13,13 +13,12 @@ const DrawerItem = ({ label, focused, onPress }) => {
         <TouchableOpacity style={{ height: 60 }} onPress={onPress}>
             <Block flex row style={containerStyles}>
                 <Block middle flex={0.1} style={{ marginRight: 5 }}>
-                    <Text>I</Text>
                 </Block>
                 <Block row center flex={0.9}>
                     <Text
                         size={15}
                         bold={focused ? true : false}
-                        color={focused ? "white" : "rgba(0,0,0,0.5)"}
+                        color={focused ? "white" : "rgba(0,0,0,0.7)"}
                     >
                         {label}
                     </Text>
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16
     },
     activeStyle: {
-        backgroundColor: myTheme.COLORS.ACTIVE,
+        backgroundColor: theme.COLORS.PRIMARY,
         borderRadius: 4
     },
     shadow: {
@@ -43,6 +42,10 @@ const styles = StyleSheet.create({
             width: 0,
             height: 2
         },
+        icon: {
+            width: 24,
+            height: 24, // Adjust size as needed
+          },
         shadowRadius: 8,
         shadowOpacity: 0.1
     }

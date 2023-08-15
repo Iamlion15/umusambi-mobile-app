@@ -28,7 +28,7 @@ function CustomDrawerContent(props) {
                 forceInset={{ top: "always", horizontal: "never" }}
             >
                 <Block flex={0.06} style={styles.header}>
-                    <Text>ELECTRONIC JOURNA SENTIMENT ANALYSIS</Text>
+                    <Text style={styles.headerText}>UMUSAMBI VILLAGE</Text>
                 </Block>
                 <Block flex style={{ paddingLeft: 8, paddingRight: 14 }}>
                     <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
@@ -75,6 +75,13 @@ const styles = StyleSheet.create({
     logoutText: {
         color: theme.COLORS.RED,
         fontWeight: "bold",
+    },
+    headerText: {
+        color: theme.COLORS.PRIMARY, // Customize the color to your preference
+        fontWeight: 'bold',
+        fontSize: 20, // Customize the font size to your preference
+        letterSpacing: 1, // Adjust letter spacing for a futuristic look
+        textAlign: 'center', // Center the text
     },
 });
 

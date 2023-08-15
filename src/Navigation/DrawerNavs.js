@@ -6,7 +6,7 @@ import CustomDrawerContent from './CustomDrawerNavigator';
 import UserDetailScreen from '../screens/UserProfileScreen';
 import MapScreen from '../screens/MapScreen';
 import LoginScreenn from '../screens/LoginScreen';
-import LandingPage from '../screens/News';
+import LandingPage from '../screens/LandingPage';
 
 
 const Drawer = createDrawerNavigator();
