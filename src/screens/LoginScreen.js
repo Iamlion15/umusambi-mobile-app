@@ -52,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
                 "content-type": "application/JSON",
             },
         };
-        fetch("http://192.168.43.236:7000/api/app/login", methodOptions)
+        fetch("http://192.168.43.112:7000/api/app/login", methodOptions)
             .then((response) => {
                 if (!response.ok) {
                     if (response.status == 401) {
@@ -84,11 +84,14 @@ const LoginScreen = ({ navigation }) => {
                 }
             })
             .then((value) => {
-                console.log(value)
+                console.log("here",value);
                 if (value.message === "successfully logged in") {
                     // Store the token in SecureStore
+                    console.log("here");
+                    
                     AsyncStorage.setItem('UserToken', value.token)
                         .then(() => {
+                            console.log("running here")
                             // Navigate to the next screen or perform any other action
                             navigation.navigate('Home');
                         })

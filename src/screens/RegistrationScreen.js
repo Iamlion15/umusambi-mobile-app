@@ -41,19 +41,19 @@ const RegistrationScreen = () => {
             return false;
         }
 
-        if (!isValidEmail(data.email)) {
-            setMsg("Invalid email format.");
-            showAlert();
-            return false;
-        }
+        // if (!isValidEmail(data.email)) {
+        //     setMsg("Invalid email format.");
+        //     showAlert();
+        //     return false;
+        // }
 
         if (data.phone.length !== 10) {
             setMsg("Phone number must be 10 digits.");
             showAlert();
             return false;
         }
-        if (data.nID.length !== 20) {
-            setMsg("National Identity must be 20 characters.");
+        if (data.nID.length !== 16) {
+            setMsg("National Identity must be 16 characters.");
             showAlert();
             return false;
         }
@@ -70,10 +70,10 @@ const RegistrationScreen = () => {
                 "content-type": "application/JSON",
             },
         };
-        fetch("http://192.168.43.236:7000/api/app/signup", methodOptions)
+        fetch("http://192.168.43.112:7000/api/app/signup", methodOptions)
             .then((response) => {
                 if (!response.ok) {
-                    console.log(response);
+                    console.log("response",response);
                     console.log("INVALID EMAIL OR PASSWORD");
                     if (response.status == 405) {
                         setMsg("EMAIL OR PHONE NUMBER USED")

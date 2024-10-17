@@ -28,7 +28,7 @@ const UserDetailScreen = () => {
             },
         };
         try {
-            const response = await fetch('http://192.168.43.236:7000/api/app/getdetails',requestOptions);
+            const response = await fetch('http://192.168.43.112:7000/api/app/getdetails',requestOptions);
             if (response.ok) {
                 const data = await response.json();
                 setUser(data);
